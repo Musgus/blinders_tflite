@@ -20,6 +20,9 @@ Notes:
 """
 import json
 import os
+import sys
+import io
+from datetime import datetime
 from pathlib import Path
 import numpy as np
 import matplotlib.pyplot as plt
@@ -133,6 +136,28 @@ def main(args):
 
 	Path(out_dir).mkdir(parents=True, exist_ok=True)
 
+	# --- Tee stdout/stderr to a log file so all terminal output is saved ---
+	class _Tee(io.TextIOBase):
+		def __init__(self, *streams):
+			self._streams = streams
+		def write(self, s):
+			for st in self._streams:
+				st.write(s)
+				st.flush()
+			return len(s)
+		def flush(self):
+			for st in self._streams:
+				st.flush()
+
+	log_ts = datetime.now().strftime('%Y%m%d_%H%M%S')
+	log_path = os.path.join(out_dir, f'train_log_{log_ts}.txt')
+	_log_file = open(log_path, 'w', encoding='utf-8')
+	orig_out, orig_err = sys.stdout, sys.stderr
+	sys.stdout = _Tee(orig_out, _log_file)
+	sys.stderr = _Tee(orig_err, _log_file)
+	print('=== Training log started ===')
+	print('Logging to:', log_path)
+
 	print('Loading dataset from', dataset_for_train)
 	if dataset_for_val:
 		train_ds = tf.keras.preprocessing.image_dataset_from_directory(dataset_for_train, image_size=img_size, batch_size=batch)
@@ -220,6 +245,11 @@ def main(args):
 		with open(tflite_path, 'wb') as f:
 			f.write(tflite_model)
 		print('Saved TFLite to', tflite_path)
+
+	print('=== Training log finished ===')
+	# Restore std streams and close log file
+	sys.stdout, sys.stderr = orig_out, orig_err
+	_log_file.close()
 
 
 if __name__ == '__main__':

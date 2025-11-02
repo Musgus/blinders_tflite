@@ -1,0 +1,559 @@
+=== Training log started ===
+Logging to: scripts/output\train_log_20251102_153134.txt
+Loading dataset from C:/Users/jairo/Downloads/AI/data
+Found 501 files belonging to 4 classes.
+Using 401 files for training.
+Found 501 files belonging to 4 classes.
+Using 100 files for validation.
+Found classes: ['abel', 'jairo', 'luis', 'mark'] (num_classes=4)
+Model: "functional"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ Layer (type)                         ┃ Output Shape                ┃         Param # ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ input_layer_1 (InputLayer)           │ (None, 224, 224, 3)         │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ true_divide (TrueDivide)             │ (None, 224, 224, 3)         │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ subtract (Subtract)                  │ (None, 224, 224, 3)         │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ mobilenetv2_1.00_224 (Functional)    │ (None, 7, 7, 1280)          │       2,257,984 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ global_average_pooling2d             │ (None, 1280)                │               0 │
+│ (GlobalAveragePooling2D)             │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout (Dropout)                    │ (None, 1280)                │               0 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense (Dense)                        │ (None, 4)                   │           5,124 │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+ Total params: 2,263,108 (8.63 MB)
+ Trainable params: 5,124 (20.02 KB)
+ Non-trainable params: 2,257,984 (8.61 MB)
+None
+Epoch 1/8
+
+[1m 1/26[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m1:37[0m 4s/step - accuracy: 0.5000 - loss: 1.1509
+[1m 2/26[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m4s[0m 183ms/step - accuracy: 0.4844 - loss: 1.2014
+[1m 3/26[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m4s[0m 179ms/step - accuracy: 0.4826 - loss: 1.2388
+[1m 4/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 173ms/step - accuracy: 0.4753 - loss: 1.2603
+[1m 5/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 169ms/step - accuracy: 0.4527 - loss: 1.2864
+[1m 6/26[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m3s[0m 166ms/step - accuracy: 0.4363 - loss: 1.3017
+[1m 7/26[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m3s[0m 167ms/step - accuracy: 0.4250 - loss: 1.3139
+[1m 8/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m2s[0m 166ms/step - accuracy: 0.4178 - loss: 1.3203
+[1m 9/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m2s[0m 167ms/step - accuracy: 0.4138 - loss: 1.3246
+[1m10/26[0m [32m━━━━━━━[0m[37m━━━━━━━━━━━━━[0m [1m2s[0m 166ms/step - accuracy: 0.4124 - loss: 1.3258
+[1m11/26[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m2s[0m 166ms/step - accuracy: 0.4111 - loss: 1.3276
+[1m12/26[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m2s[0m 166ms/step - accuracy: 0.4107 - loss: 1.3291
+[1m13/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 165ms/step - accuracy: 0.4109 - loss: 1.3288
+[1m14/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 165ms/step - accuracy: 0.4115 - loss: 1.3271
+[1m15/26[0m [32m━━━━━━━━━━━[0m[37m━━━━━━━━━[0m [1m1s[0m 164ms/step - accuracy: 0.4127 - loss: 1.3248
+[1m16/26[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m1s[0m 165ms/step - accuracy: 0.4137 - loss: 1.3226
+[1m17/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 166ms/step - accuracy: 0.4143 - loss: 1.3208
+[1m18/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 165ms/step - accuracy: 0.4152 - loss: 1.3184
+[1m19/26[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m1s[0m 165ms/step - accuracy: 0.4162 - loss: 1.3160
+[1m20/26[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m0s[0m 165ms/step - accuracy: 0.4169 - loss: 1.3142
+[1m21/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 165ms/step - accuracy: 0.4178 - loss: 1.3124
+[1m22/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 165ms/step - accuracy: 0.4188 - loss: 1.3103
+[1m23/26[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 164ms/step - accuracy: 0.4196 - loss: 1.3082
+[1m24/26[0m [32m━━━━━━━━━━━━━━━━━━[0m[37m━━[0m [1m0s[0m 165ms/step - accuracy: 0.4208 - loss: 1.3058
+[1m25/26[0m [32m━━━━━━━━━━━━━━━━━━━[0m[37m━[0m [1m0s[0m 165ms/step - accuracy: 0.4221 - loss: 1.3031
+[1m26/26[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m10s[0m 240ms/step - accuracy: 0.4539 - loss: 1.2374 - val_accuracy: 0.7100 - val_loss: 0.9167
+Epoch 2/8
+
+[1m 1/26[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m4s[0m 199ms/step - accuracy: 0.8750 - loss: 0.8363
+[1m 2/26[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m3s[0m 156ms/step - accuracy: 0.8281 - loss: 0.8686
+[1m 3/26[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m3s[0m 153ms/step - accuracy: 0.7951 - loss: 0.8807
+[1m 4/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 153ms/step - accuracy: 0.7643 - loss: 0.8982
+[1m 5/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 157ms/step - accuracy: 0.7315 - loss: 0.9243
+[1m 6/26[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m3s[0m 157ms/step - accuracy: 0.7155 - loss: 0.9372
+[1m 7/26[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m2s[0m 156ms/step - accuracy: 0.7076 - loss: 0.9405
+[1m 8/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m2s[0m 155ms/step - accuracy: 0.7022 - loss: 0.9409
+[1m 9/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m2s[0m 156ms/step - accuracy: 0.6967 - loss: 0.9410
+[1m10/26[0m [32m━━━━━━━[0m[37m━━━━━━━━━━━━━[0m [1m2s[0m 156ms/step - accuracy: 0.6895 - loss: 0.9423
+[1m11/26[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m2s[0m 156ms/step - accuracy: 0.6837 - loss: 0.9429
+[1m12/26[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m2s[0m 156ms/step - accuracy: 0.6792 - loss: 0.9437
+[1m13/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 157ms/step - accuracy: 0.6754 - loss: 0.9440
+[1m14/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 157ms/step - accuracy: 0.6724 - loss: 0.9435
+[1m15/26[0m [32m━━━━━━━━━━━[0m[37m━━━━━━━━━[0m [1m1s[0m 157ms/step - accuracy: 0.6701 - loss: 0.9425
+[1m16/26[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m1s[0m 158ms/step - accuracy: 0.6688 - loss: 0.9410
+[1m17/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 158ms/step - accuracy: 0.6681 - loss: 0.9392
+[1m18/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 158ms/step - accuracy: 0.6673 - loss: 0.9375
+[1m19/26[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m1s[0m 158ms/step - accuracy: 0.6663 - loss: 0.9359
+[1m20/26[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m0s[0m 158ms/step - accuracy: 0.6656 - loss: 0.9338
+[1m21/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 158ms/step - accuracy: 0.6649 - loss: 0.9316
+[1m22/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 158ms/step - accuracy: 0.6647 - loss: 0.9295
+[1m23/26[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 158ms/step - accuracy: 0.6641 - loss: 0.9274
+[1m24/26[0m [32m━━━━━━━━━━━━━━━━━━[0m[37m━━[0m [1m0s[0m 158ms/step - accuracy: 0.6639 - loss: 0.9252
+[1m25/26[0m [32m━━━━━━━━━━━━━━━━━━━[0m[37m━[0m [1m0s[0m 157ms/step - accuracy: 0.6639 - loss: 0.9231
+[1m26/26[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 193ms/step - accuracy: 0.6633 - loss: 0.8716 - val_accuracy: 0.9300 - val_loss: 0.6536
+Epoch 3/8
+
+[1m 1/26[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 231ms/step - accuracy: 0.8125 - loss: 0.7230
+[1m 2/26[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m4s[0m 186ms/step - accuracy: 0.8281 - loss: 0.7214
+[1m 3/26[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m4s[0m 181ms/step - accuracy: 0.8368 - loss: 0.7170
+[1m 4/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 178ms/step - accuracy: 0.8268 - loss: 0.7268
+[1m 5/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 175ms/step - accuracy: 0.8240 - loss: 0.7325
+[1m 6/26[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m3s[0m 173ms/step - accuracy: 0.8203 - loss: 0.7334
+[1m 7/26[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m3s[0m 170ms/step - accuracy: 0.8128 - loss: 0.7357
+[1m 8/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m3s[0m 170ms/step - accuracy: 0.8079 - loss: 0.7365
+[1m 9/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m2s[0m 170ms/step - accuracy: 0.8053 - loss: 0.7358
+[1m10/26[0m [32m━━━━━━━[0m[37m━━━━━━━━━━━━━[0m [1m2s[0m 170ms/step - accuracy: 0.8035 - loss: 0.7342
+[1m11/26[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m2s[0m 169ms/step - accuracy: 0.8028 - loss: 0.7317
+[1m12/26[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m2s[0m 168ms/step - accuracy: 0.8014 - loss: 0.7302
+[1m13/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 168ms/step - accuracy: 0.7997 - loss: 0.7296
+[1m14/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 167ms/step - accuracy: 0.7987 - loss: 0.7290
+[1m15/26[0m [32m━━━━━━━━━━━[0m[37m━━━━━━━━━[0m [1m1s[0m 167ms/step - accuracy: 0.7980 - loss: 0.7283
+[1m16/26[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m1s[0m 168ms/step - accuracy: 0.7979 - loss: 0.7271
+[1m17/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 168ms/step - accuracy: 0.7983 - loss: 0.7253
+[1m18/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 168ms/step - accuracy: 0.7993 - loss: 0.7231
+[1m19/26[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m1s[0m 169ms/step - accuracy: 0.8003 - loss: 0.7209
+[1m20/26[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m1s[0m 168ms/step - accuracy: 0.8009 - loss: 0.7194
+[1m21/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 168ms/step - accuracy: 0.8016 - loss: 0.7178
+[1m22/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 168ms/step - accuracy: 0.8023 - loss: 0.7161
+[1m23/26[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 168ms/step - accuracy: 0.8031 - loss: 0.7142
+[1m24/26[0m [32m━━━━━━━━━━━━━━━━━━[0m[37m━━[0m [1m0s[0m 170ms/step - accuracy: 0.8038 - loss: 0.7124
+[1m25/26[0m [32m━━━━━━━━━━━━━━━━━━━[0m[37m━[0m [1m0s[0m 171ms/step - accuracy: 0.8047 - loss: 0.7102
+[1m26/26[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m6s[0m 211ms/step - accuracy: 0.8279 - loss: 0.6575 - val_accuracy: 0.9700 - val_loss: 0.4705
+Epoch 4/8
+
+[1m 1/26[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 226ms/step - accuracy: 0.8750 - loss: 0.5822
+[1m 2/26[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m3s[0m 166ms/step - accuracy: 0.9062 - loss: 0.5659
+[1m 3/26[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m3s[0m 172ms/step - accuracy: 0.9097 - loss: 0.5596
+[1m 4/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 171ms/step - accuracy: 0.9089 - loss: 0.5646
+[1m 5/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 170ms/step - accuracy: 0.9071 - loss: 0.5753
+[1m 6/26[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m3s[0m 167ms/step - accuracy: 0.9052 - loss: 0.5803
+[1m 7/26[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m3s[0m 166ms/step - accuracy: 0.9047 - loss: 0.5829
+[1m 8/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m2s[0m 165ms/step - accuracy: 0.9059 - loss: 0.5817
+[1m 9/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m2s[0m 164ms/step - accuracy: 0.9055 - loss: 0.5814
+[1m10/26[0m [32m━━━━━━━[0m[37m━━━━━━━━━━━━━[0m [1m2s[0m 163ms/step - accuracy: 0.9056 - loss: 0.5796
+[1m11/26[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m2s[0m 163ms/step - accuracy: 0.9054 - loss: 0.5783
+[1m12/26[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m2s[0m 163ms/step - accuracy: 0.9055 - loss: 0.5764
+[1m13/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 163ms/step - accuracy: 0.9054 - loss: 0.5745
+[1m14/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m1s[0m 163ms/step - accuracy: 0.9057 - loss: 0.5719
+[1m15/26[0m [32m━━━━━━━━━━━[0m[37m━━━━━━━━━[0m [1m1s[0m 163ms/step - accuracy: 0.9065 - loss: 0.5688
+[1m16/26[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m1s[0m 163ms/step - accuracy: 0.9069 - loss: 0.5661
+[1m17/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 163ms/step - accuracy: 0.9072 - loss: 0.5642
+[1m18/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 163ms/step - accuracy: 0.9072 - loss: 0.5622
+[1m19/26[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m1s[0m 163ms/step - accuracy: 0.9069 - loss: 0.5604
+[1m20/26[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m0s[0m 163ms/step - accuracy: 0.9062 - loss: 0.5591
+[1m21/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 164ms/step - accuracy: 0.9057 - loss: 0.5574
+[1m22/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 163ms/step - accuracy: 0.9055 - loss: 0.5555
+[1m23/26[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 163ms/step - accuracy: 0.9053 - loss: 0.5536
+[1m24/26[0m [32m━━━━━━━━━━━━━━━━━━[0m[37m━━[0m [1m0s[0m 163ms/step - accuracy: 0.9054 - loss: 0.5517
+[1m25/26[0m [32m━━━━━━━━━━━━━━━━━━━[0m[37m━[0m [1m0s[0m 163ms/step - accuracy: 0.9056 - loss: 0.5497
+[1m26/26[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 200ms/step - accuracy: 0.9102 - loss: 0.5006 - val_accuracy: 0.9900 - val_loss: 0.3470
+Epoch 5/8
+
+[1m 1/26[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m6s[0m 240ms/step - accuracy: 1.0000 - loss: 0.3641
+[1m 2/26[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m3s[0m 165ms/step - accuracy: 0.9844 - loss: 0.3950
+[1m 3/26[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m3s[0m 166ms/step - accuracy: 0.9826 - loss: 0.3972
+[1m 4/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 169ms/step - accuracy: 0.9831 - loss: 0.3990
+[1m 5/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 171ms/step - accuracy: 0.9815 - loss: 0.4010
+[1m 6/26[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m3s[0m 171ms/step - accuracy: 0.9811 - loss: 0.4032
+[1m 7/26[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m3s[0m 171ms/step - accuracy: 0.9800 - loss: 0.4056
+[1m 8/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m3s[0m 169ms/step - accuracy: 0.9776 - loss: 0.4059
+[1m 9/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m2s[0m 168ms/step - accuracy: 0.9762 - loss: 0.4056
+[1m10/26[0m [32m━━━━━━━[0m[37m━━━━━━━━━━━━━[0m [1m2s[0m 167ms/step - accuracy: 0.9748 - loss: 0.4058
+[1m11/26[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m2s[0m 167ms/step - accuracy: 0.9735 - loss: 0.4057
+[1m12/26[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m2s[0m 169ms/step - accuracy: 0.9722 - loss: 0.4063
+[1m13/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 169ms/step - accuracy: 0.9714 - loss: 0.4065
+[1m14/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 169ms/step - accuracy: 0.9709 - loss: 0.4062
+[1m15/26[0m [32m━━━━━━━━━━━[0m[37m━━━━━━━━━[0m [1m1s[0m 169ms/step - accuracy: 0.9706 - loss: 0.4056
+[1m16/26[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m1s[0m 169ms/step - accuracy: 0.9705 - loss: 0.4047
+[1m17/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 169ms/step - accuracy: 0.9703 - loss: 0.4037
+[1m18/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9698 - loss: 0.4030
+[1m19/26[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9695 - loss: 0.4024
+[1m20/26[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9690 - loss: 0.4018
+[1m21/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 170ms/step - accuracy: 0.9686 - loss: 0.4012
+[1m22/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 170ms/step - accuracy: 0.9684 - loss: 0.4004
+[1m23/26[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 170ms/step - accuracy: 0.9681 - loss: 0.3997
+[1m24/26[0m [32m━━━━━━━━━━━━━━━━━━[0m[37m━━[0m [1m0s[0m 169ms/step - accuracy: 0.9679 - loss: 0.3989
+[1m25/26[0m [32m━━━━━━━━━━━━━━━━━━━[0m[37m━[0m [1m0s[0m 169ms/step - accuracy: 0.9677 - loss: 0.3982
+[1m26/26[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 206ms/step - accuracy: 0.9626 - loss: 0.3816 - val_accuracy: 1.0000 - val_loss: 0.2655
+Epoch 6/8
+
+[1m 1/26[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 212ms/step - accuracy: 0.9375 - loss: 0.3351
+[1m 2/26[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m3s[0m 164ms/step - accuracy: 0.9375 - loss: 0.3320
+[1m 3/26[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m3s[0m 165ms/step - accuracy: 0.9444 - loss: 0.3212
+[1m 4/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 169ms/step - accuracy: 0.9466 - loss: 0.3224
+[1m 5/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 176ms/step - accuracy: 0.9498 - loss: 0.3246
+[1m 6/26[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m3s[0m 177ms/step - accuracy: 0.9530 - loss: 0.3234
+[1m 7/26[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m3s[0m 175ms/step - accuracy: 0.9546 - loss: 0.3218
+[1m 8/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m3s[0m 173ms/step - accuracy: 0.9544 - loss: 0.3211
+[1m 9/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m2s[0m 173ms/step - accuracy: 0.9548 - loss: 0.3204
+[1m10/26[0m [32m━━━━━━━[0m[37m━━━━━━━━━━━━━[0m [1m2s[0m 173ms/step - accuracy: 0.9556 - loss: 0.3191
+[1m11/26[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m2s[0m 172ms/step - accuracy: 0.9560 - loss: 0.3176
+[1m12/26[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m2s[0m 172ms/step - accuracy: 0.9566 - loss: 0.3160
+[1m13/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 172ms/step - accuracy: 0.9574 - loss: 0.3141
+[1m14/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 172ms/step - accuracy: 0.9582 - loss: 0.3120
+[1m15/26[0m [32m━━━━━━━━━━━[0m[37m━━━━━━━━━[0m [1m1s[0m 172ms/step - accuracy: 0.9590 - loss: 0.3100
+[1m16/26[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m1s[0m 171ms/step - accuracy: 0.9599 - loss: 0.3082
+[1m17/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 172ms/step - accuracy: 0.9607 - loss: 0.3063
+[1m18/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 172ms/step - accuracy: 0.9616 - loss: 0.3044
+[1m19/26[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m1s[0m 172ms/step - accuracy: 0.9622 - loss: 0.3028
+[1m20/26[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m1s[0m 172ms/step - accuracy: 0.9628 - loss: 0.3015
+[1m21/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 171ms/step - accuracy: 0.9633 - loss: 0.3005
+[1m22/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 171ms/step - accuracy: 0.9638 - loss: 0.2995
+[1m23/26[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 170ms/step - accuracy: 0.9644 - loss: 0.2985
+[1m24/26[0m [32m━━━━━━━━━━━━━━━━━━[0m[37m━━[0m [1m0s[0m 169ms/step - accuracy: 0.9649 - loss: 0.2974
+[1m25/26[0m [32m━━━━━━━━━━━━━━━━━━━[0m[37m━[0m [1m0s[0m 169ms/step - accuracy: 0.9652 - loss: 0.2966
+[1m26/26[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 206ms/step - accuracy: 0.9726 - loss: 0.2758 - val_accuracy: 1.0000 - val_loss: 0.2070
+Epoch 7/8
+
+[1m 1/26[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 215ms/step - accuracy: 0.9375 - loss: 0.2824
+[1m 2/26[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m4s[0m 170ms/step - accuracy: 0.9531 - loss: 0.2638
+[1m 3/26[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m3s[0m 170ms/step - accuracy: 0.9618 - loss: 0.2483
+[1m 4/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 167ms/step - accuracy: 0.9674 - loss: 0.2438
+[1m 5/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 168ms/step - accuracy: 0.9690 - loss: 0.2434
+[1m 6/26[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m3s[0m 168ms/step - accuracy: 0.9707 - loss: 0.2437
+[1m 7/26[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m3s[0m 168ms/step - accuracy: 0.9723 - loss: 0.2444
+[1m 8/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m3s[0m 167ms/step - accuracy: 0.9738 - loss: 0.2457
+[1m 9/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m2s[0m 167ms/step - accuracy: 0.9752 - loss: 0.2466
+[1m10/26[0m [32m━━━━━━━[0m[37m━━━━━━━━━━━━━[0m [1m2s[0m 167ms/step - accuracy: 0.9764 - loss: 0.2474
+[1m11/26[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m2s[0m 167ms/step - accuracy: 0.9775 - loss: 0.2475
+[1m12/26[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m2s[0m 168ms/step - accuracy: 0.9785 - loss: 0.2472
+[1m13/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 168ms/step - accuracy: 0.9794 - loss: 0.2466
+[1m14/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 169ms/step - accuracy: 0.9803 - loss: 0.2460
+[1m15/26[0m [32m━━━━━━━━━━━[0m[37m━━━━━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9810 - loss: 0.2455
+[1m16/26[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m1s[0m 171ms/step - accuracy: 0.9817 - loss: 0.2453
+[1m17/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9822 - loss: 0.2450
+[1m18/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9826 - loss: 0.2444
+[1m19/26[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9830 - loss: 0.2438
+[1m20/26[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m1s[0m 169ms/step - accuracy: 0.9833 - loss: 0.2433
+[1m21/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 168ms/step - accuracy: 0.9837 - loss: 0.2427
+[1m22/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 167ms/step - accuracy: 0.9841 - loss: 0.2421
+[1m23/26[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 167ms/step - accuracy: 0.9844 - loss: 0.2415
+[1m24/26[0m [32m━━━━━━━━━━━━━━━━━━[0m[37m━━[0m [1m0s[0m 168ms/step - accuracy: 0.9847 - loss: 0.2410
+[1m25/26[0m [32m━━━━━━━━━━━━━━━━━━━[0m[37m━[0m [1m0s[0m 167ms/step - accuracy: 0.9849 - loss: 0.2406
+[1m26/26[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 206ms/step - accuracy: 0.9900 - loss: 0.2323 - val_accuracy: 1.0000 - val_loss: 0.1666
+Epoch 8/8
+
+[1m 1/26[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m5s[0m 233ms/step - accuracy: 1.0000 - loss: 0.1237
+[1m 2/26[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m4s[0m 183ms/step - accuracy: 0.9844 - loss: 0.1531
+[1m 3/26[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m4s[0m 180ms/step - accuracy: 0.9826 - loss: 0.1610
+[1m 4/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 177ms/step - accuracy: 0.9831 - loss: 0.1693
+[1m 5/26[0m [32m━━━[0m[37m━━━━━━━━━━━━━━━━━[0m [1m3s[0m 176ms/step - accuracy: 0.9840 - loss: 0.1753
+[1m 6/26[0m [32m━━━━[0m[37m━━━━━━━━━━━━━━━━[0m [1m3s[0m 174ms/step - accuracy: 0.9849 - loss: 0.1782
+[1m 7/26[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m3s[0m 173ms/step - accuracy: 0.9858 - loss: 0.1801
+[1m 8/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m3s[0m 173ms/step - accuracy: 0.9866 - loss: 0.1815
+[1m 9/26[0m [32m━━━━━━[0m[37m━━━━━━━━━━━━━━[0m [1m2s[0m 173ms/step - accuracy: 0.9873 - loss: 0.1826
+[1m10/26[0m [32m━━━━━━━[0m[37m━━━━━━━━━━━━━[0m [1m2s[0m 173ms/step - accuracy: 0.9879 - loss: 0.1833
+[1m11/26[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m2s[0m 172ms/step - accuracy: 0.9880 - loss: 0.1841
+[1m12/26[0m [32m━━━━━━━━━[0m[37m━━━━━━━━━━━[0m [1m2s[0m 171ms/step - accuracy: 0.9881 - loss: 0.1848
+[1m13/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 170ms/step - accuracy: 0.9883 - loss: 0.1855
+[1m14/26[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m2s[0m 170ms/step - accuracy: 0.9885 - loss: 0.1857
+[1m15/26[0m [32m━━━━━━━━━━━[0m[37m━━━━━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9887 - loss: 0.1858
+[1m16/26[0m [32m━━━━━━━━━━━━[0m[37m━━━━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9889 - loss: 0.1859
+[1m17/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9892 - loss: 0.1860
+[1m18/26[0m [32m━━━━━━━━━━━━━[0m[37m━━━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9894 - loss: 0.1860
+[1m19/26[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9896 - loss: 0.1861
+[1m20/26[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m1s[0m 170ms/step - accuracy: 0.9898 - loss: 0.1861
+[1m21/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 169ms/step - accuracy: 0.9899 - loss: 0.1862
+[1m22/26[0m [32m━━━━━━━━━━━━━━━━[0m[37m━━━━[0m [1m0s[0m 170ms/step - accuracy: 0.9899 - loss: 0.1862
+[1m23/26[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 170ms/step - accuracy: 0.9900 - loss: 0.1863
+[1m24/26[0m [32m━━━━━━━━━━━━━━━━━━[0m[37m━━[0m [1m0s[0m 170ms/step - accuracy: 0.9901 - loss: 0.1863
+[1m25/26[0m [32m━━━━━━━━━━━━━━━━━━━[0m[37m━[0m [1m0s[0m 169ms/step - accuracy: 0.9902 - loss: 0.1863
+[1m26/26[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 208ms/step - accuracy: 0.9925 - loss: 0.1865 - val_accuracy: 1.0000 - val_loss: 0.1385
+
+[1m1/7[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m1s[0m 211ms/step - accuracy: 1.0000 - loss: 0.1550
+[1m2/7[0m [32m━━━━━[0m[37m━━━━━━━━━━━━━━━[0m [1m0s[0m 162ms/step - accuracy: 1.0000 - loss: 0.1488
+[1m3/7[0m [32m━━━━━━━━[0m[37m━━━━━━━━━━━━[0m [1m0s[0m 165ms/step - accuracy: 1.0000 - loss: 0.1465
+[1m4/7[0m [32m━━━━━━━━━━━[0m[37m━━━━━━━━━[0m [1m0s[0m 167ms/step - accuracy: 1.0000 - loss: 0.1440
+[1m5/7[0m [32m━━━━━━━━━━━━━━[0m[37m━━━━━━[0m [1m0s[0m 167ms/step - accuracy: 1.0000 - loss: 0.1426
+[1m6/7[0m [32m━━━━━━━━━━━━━━━━━[0m[37m━━━[0m [1m0s[0m 165ms/step - accuracy: 1.0000 - loss: 0.1420
+[1m7/7[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 145ms/step - accuracy: 1.0000 - loss: 0.1385
+Validation loss=0.1385, acc=1.0000
+Saved artifact at 'scripts/output\saved_model'. The following endpoints are available:
+
+* Endpoint 'serve'
+  args_0 (POSITIONAL_ONLY): TensorSpec(shape=(None, 224, 224, 3), dtype=tf.float32, name='keras_tensor_154')
+Output Type:
+  TensorSpec(shape=(None, 4), dtype=tf.float32, name=None)
+Captures:
+  2334244631184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244630992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244631760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244632528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244631952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244632336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244631376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244633104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244631568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244630800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244632720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244633872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244633680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244634064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244633296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244634256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244634448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244632912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244633488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334244632144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246339024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246339792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246339600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246339984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246338832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246341712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246342864: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246343056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246342288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246341904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246343440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246344208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246344016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246344400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246342096: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246343632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246344976: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246344784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246343824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246345168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246345552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246346128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246345936: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246344592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246346320: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246346704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246347472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246347280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246347664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246343248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246346896: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246348432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246348240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246348624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246345744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246347856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246349392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246349200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246349584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246347088: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246348816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246350352: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246350160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246350544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246348048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246349776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246351312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246351120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246351504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246349008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246350736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246352272: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246352080: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246352464: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246349968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246352656: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246353424: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246353232: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246353616: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246351696: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246353808: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246354576: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246354384: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246354768: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246352848: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246354000: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252155536: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252155344: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246354192: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334246350928: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252154960: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252156496: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252156304: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252156688: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252155728: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252155920: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252157456: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252157264: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252157648: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252155152: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252156880: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252158416: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252158224: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252158608: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252156112: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252157840: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252159376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252159184: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252159568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252157072: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252158800: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252160336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252160144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252160528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252158032: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252159760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252161296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252161104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252161488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252158992: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252160720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252162256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252162064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252162448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252159952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252161680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252163216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252163024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252163408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252160912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252162640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252164176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252163984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252164368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252161872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252163600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252165136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252164944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252165328: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252162832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252164560: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252166096: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252165904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252166288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252163792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252165520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252167056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252166864: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252167248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252164752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252166480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252168016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252167824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252168208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252165712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252167440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252168976: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252168784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252169168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252166672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252168400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252169936: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252169744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252170128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252167632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252169360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252170896: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252170704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252171088: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252168592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252170320: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269751376: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269751760: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252170512: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334252169552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269752144: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269752912: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269752720: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269753104: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269751568: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269752336: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269753872: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269753680: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269754064: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269751952: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269753296: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269754832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269754640: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269755024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269752528: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269754256: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269755792: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269755600: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269755984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269753488: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269755216: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269756752: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269756560: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269756944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269754448: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269756176: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269757712: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269757520: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269757904: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269755408: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269757136: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269758672: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269758480: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269758864: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269756368: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269758096: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269759632: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269759440: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269759824: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269757328: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269759056: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269760592: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269760400: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269760784: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269758288: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269760016: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269761552: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269761360: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269761744: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269759248: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269760976: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269762512: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269762320: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269762704: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269760208: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269761936: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269763472: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269763280: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269763664: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269761168: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269762896: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269764432: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269764240: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269764624: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269762128: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269763856: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269765392: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269765200: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269765584: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269763088: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269764816: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269766352: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269766160: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269766544: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269764048: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269765776: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269767312: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269767120: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269767504: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269765008: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269766736: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334277058832: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334277059024: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269766928: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334269765968: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334277059984: TensorSpec(shape=(), dtype=tf.resource, name=None)
+  2334277060944: TensorSpec(shape=(), dtype=tf.resource, name=None)
+Exported model using model.export to scripts/output\saved_model
+Saved labels to scripts/output\labels.json
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 947ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 959ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 177ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 192ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 166ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 177ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 164ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 177ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 171ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 183ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 166ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 178ms/step
+
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 779ms/step
+[1m1/1[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 796ms/step
+Saved confusion matrix to scripts/output\confusion_matrix.png
+Saved TFLite to scripts/output\model.tflite
+=== Training log finished ===

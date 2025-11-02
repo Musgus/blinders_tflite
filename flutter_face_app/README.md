@@ -1,36 +1,73 @@
-Flutter TFLite Face Recognizer - Starter
+Flutter TFLite Face Recognizer (Android)
 
-What this provides
-- A minimal Flutter app scaffold at `flutter_face_app/` that:
-  - uses the `camera` plugin for camera frames
-  - suggests `google_mlkit_face_detection` for face detection
-  - uses `tflite_flutter` and `tflite_flutter_helper` to run the provided `model.tflite`
-  - updates the displayed prediction every 10 seconds (configurable)
+Overview
+- Live camera preview with face detection (ML Kit)
+- Tracks the largest face and draws a green square that follows it
+- Crops and resizes the face to 224×224 and runs a TFLite classifier
+- Bottom bar shows Top‑4 labels with probabilities (updates ~every 5 frames)
+- Warm‑up hint: shows “Preparando… Ns” for 30s while still displaying probabilities
+- Front/back camera toggle via floating button
 
-Important: copy model and labels
-1. From your Python project, copy the TFLite model and labels into the Flutter project assets:
+Project layout (this app)
+- `lib/main.dart`: UI + orchestration, drawing overlay, camera switching
+- `lib/pipeline/mlkit_service.dart`: ML Kit face detection wrapper (NV21 bytes input)
+- `lib/pipeline/image_utils.dart`: YUV_420_888 → NV21 converter; crop+resize from Y plane to RGB (Y replicated)
+- `lib/pipeline/tflite_service.dart`: interpreter wrapper; shapes input/output and returns probabilities
+- `assets/`: `model.tflite`, `labels.json`
 
-   Windows PowerShell (from workspace root):
+Requirements
+- Flutter SDK installed (stable channel)
+- Android device/emulator
+- This repo already declares camera permission; make sure your device grants it at runtime
 
-   cp .\scripts\output\model.tflite .\flutter_face_app\assets\model.tflite ; cp .\scripts\output\labels.json .\flutter_face_app\assets\labels.json
+Copy model + labels (from Python output)
+Run in the workspace root (PowerShell):
 
-2. Run in the flutter app folder:
+```powershell
+cp .\scripts\output\model.tflite .\flutter_face_app\assets\model.tflite ; cp .\scripts\output\labels.json .\flutter_face_app\assets\labels.json
+```
 
-   cd flutter_face_app
-   flutter pub get
-   flutter run -d <your_android_device>
+Run the app (debug)
+```powershell
+cd c:\Users\jairo\Downloads\AI\flutter_face_app
+flutter pub get
+flutter run
+```
 
-Notes and TODOs
-- The scaffold `lib/main.dart` contains TODOs for converting `CameraImage` (YUV) to RGB `TensorImage` which is required for both ML Kit and TFLite. There are multiple community tested snippets for that conversion; search for "camera image to inputimage flutter nv21" or use `camera` plugin sample code plus `tflite_flutter_helper` utilities.
-- On Android you must add camera permission to `android/app/src/main/AndroidManifest.xml`:
+Build a release APK
+```powershell
+cd c:\Users\jairo\Downloads\AI\flutter_face_app
+flutter clean
+flutter pub get
+flutter build apk --release
+```
+APK result: `build\app\outputs\flutter-apk\app-release.apk`
 
-  <uses-permission android:name="android.permission.CAMERA" />
+Smaller APKs per ABI (recommended)
+```powershell
+flutter build apk --release --split-per-abi
+```
+Outputs:
+- app-armeabi-v7a-release.apk
+- app-arm64-v8a-release.apk
+- app-x86_64-release.apk
 
-- ML Kit: the plugin `google_mlkit_face_detection` may require AndroidX and configuration in Gradle. Follow the plugin README.
-- Performance: consider using NNAPI or GPU delegate for `tflite_flutter` on-device. You can also quantize the model (FP16 or int8) for faster inference.
+Tuning knobs (in `main.dart`)
+- `INPUT_SIZE = 224` — model input size
+- `UPDATE_FRAMES = 5` — update probabilities every N frames
+- `WARMUP_SECONDS = 30.0` — warm‑up countdown (while still showing probs)
+- `TOP_K = 4` — number of labels shown in overlay
 
-Next steps I can help with
-- Provide a tested `CameraImage` -> `TensorImage` conversion snippet that works on Android (I can add it into `main.dart`).
-- Wire ML Kit detection properly using `InputImage.fromBytes` and plane metadata.
-- Add Android Gradle settings or example `build.gradle` changes, if you want me to scaffold them.
+Troubleshooting
+- Unable to load asset: Ensure `assets/model.tflite` and `assets/labels.json` exist and are declared in `pubspec.yaml`.
+- ImageFormat not supported: We convert YUV_420_888 → NV21 internally; this resolves ML Kit format issues.
+- Interpreter shape mismatch: The app inspects tensor shapes and builds inputs/outputs accordingly; if your model shape changes, it should adapt.
+- Low FPS: try increasing `UPDATE_FRAMES`, and consider NNAPI/GPU delegates or model quantization (int8/FP16).
+
+Notes
+- We replicate Y (luma) into RGB for inference to keep it fast and consistent. If your model needs full color, we can switch to a proper YUV→RGB conversion on the face crop.
+- Front camera overlay is mirrored to match the preview.
+
+License
+This app code is provided as-is for your project. Add a license file if you intend to distribute.
 
